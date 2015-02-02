@@ -8,13 +8,13 @@
 		<div class="twitter-feed">
 			<? foreach ($tweets as $tweet) :?>
 
-			<div class="tweet">
+				<div class="tweet">
 
-				<p><?= $tweet->text; ?></p>
-				<p><?= $tweet->created_at; ?></p>
-				<p><?= $tweet->id; ?></p>
+					<p><?= $tweet->text; ?></p>
+					<p><?= ago($tweet->created_at); ?></p>
+					<p><?= $tweet->id; ?></p>
 
-			</div>
+				</div>
 
 			<? endforeach;?>			
 			
