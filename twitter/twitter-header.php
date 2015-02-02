@@ -8,6 +8,9 @@
 	$consumersecret = "xxx";
 	$accesstoken = "xxx";
 	$accesstokensecret = "xxx";
+
+	// See PHP Date
+	$date_format = 'dS M Y';
 	 
 	function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
 
@@ -52,5 +55,7 @@
 		$tweet->text = preg_replace('@(https?://([-\w\.]+)+(/([\w/_\.]*(\?\S+)?(#\S+)?)?)?)@','<a href="$1" target="_blank">$1</a>', $tweet->text);
 		$tweet->text = preg_replace('/@(\w+)/','<a href="http://twitter.com/$1" target="_blank">@$1</a>', $tweet->text);
 		$tweet->text = preg_replace('/\s+#(\w+)/',' <a href="http://search.twitter.com/search?q=%23$1" target="_blank">#$1</a>', $tweet->text);
+		$tweet->elapsed = ago($tweet->created_at);
+		$tweet->date = date($date_format, strtotime($tweet->created_at));
 
 	}

@@ -10,13 +10,13 @@
 
 				<div class="tweet">
 
-					<p><?= $tweet->text; ?></p>
-					<p><?= ago($tweet->created_at); ?></p>
-					<p><?= $tweet->id; ?></p>
+					<p><?= $tweet->text;?></p>
+					<p><?= $tweet->elapsed;?> - <?= $tweet->date;?></p>
+					<p><?= $tweet->id;?></p>
 
 				</div>
 
-			<? endforeach;?>			
+			<? endforeach;?>
 			
 		</div>
 	</body>
