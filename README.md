@@ -12,9 +12,9 @@ To output on a page simply include the header and you're good to go!
 
 		<div class="tweet">
 
-			<p><?= $tweet->text; ?></p>
-			<p><?= $tweet->created_at; ?></p>
-			<p><?= $tweet->id; ?></p>
+			<p><?= $tweet->text;?></p>
+			<p><?= $tweet->elapsed;?> - <?= $tweet->date;?></p>
+			<p><?= $tweet->id;?></p>
 
 		</div>
 
